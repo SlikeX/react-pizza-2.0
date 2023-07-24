@@ -14,6 +14,7 @@ export function Category() {
           return (
             <li
               className={index === activeIndex ? 'active' : ''}
+              key={index}
               onClick={() => onClickCategory(index)}>
               {item}
             </li>
