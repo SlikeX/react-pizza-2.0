@@ -1,8 +1,7 @@
 import React from 'react';
 
-export function Sort() {
+export function Sort({ activeSortType, onClickSort }) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSortType, setActiveSortType] = React.useState(0);
 
   const sortTypes = ['популярности', 'цене', 'алфавиту'];
 
@@ -31,7 +30,7 @@ export function Sort() {
                 <li
                   className={index === activeSortType ? 'active' : ''}
                   key={index}
-                  onClick={() => setActiveSortType(index)}>
+                  onClick={() => onClickSort(index)}>
                   {type}
                 </li>
               );
